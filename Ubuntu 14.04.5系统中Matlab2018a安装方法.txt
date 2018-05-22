@@ -1,0 +1,20 @@
+Ubuntu 14.04.5系统中Matlab2018a安装方法
+
+参考文档：
+Ubuntu16.04系统中Matlab2018a安装方法：https://blog.csdn.net/davidhopper/article/details/79701177
+
+1.首先下载Matlab2018a，解压文件，会出现相关的破解文件和安装镜像（R2018a_glnxa64_dvd1.iso+R2018a_glnxa64_dvd2.iso）。
+2.命令行下挂载ios镜像文件，进入到解压的文件目录下，使用命令“sudo mount -o loop R2018a_glnxa64_dvd1.iso /你要挂载的目录”
+3.安装，“sudo /你要挂载的目录/MATHWORKS_R2018A/install”
+4.在安装界面起始页，选择“使用文件安装密钥”；后续选择“我已有我的许可证的文件安装密钥”，序列号在破解文件中可找（Readme.txt）
+5.安装到进度大约为“59%”时，会出现“弹出DVD1并插入DVD2以继续”的提示对话框。用步骤2中的方式挂载第二块ios镜像,使用命令“sudo mount -o loop R2018a_glnxa64_dvd1.iso /你要挂载的目录”。（最好保证挂在目录一致，因为我没试过挂载目录不一致是什么样子）
+6.安装结束后，在命令行终端窗口，输入如下命令，将破解文件导入（注意路径中不要有空格，如果确实有空格，则使用转义符“\ ”表示空格）：（记得要根据你的安装目录去更改下面的目录）
+“sudo cp -f ~/tools/Matlab2018a/Matlab2018aLinux64Crack/license_standalone.lic /usr/local/MATLAB/R2018a/licenses”
+7.在命令行终端窗口，输入如下命令，打开matlab程序：（根据安装目录找到打开MATLAB的文件）
+“/usr/local/MATLAB/R2018a/bin/matlab”
+
+
+
+若想删除MAtlab2018a,若未修改安装路径，则默认安装位置为：/usr/local/MATLAB。如需删除“Matlab”程序，输入如下命令：
+"sudo rm -rf /usr/local/MATLAB"
+"sudo rm -rf ~/.matlab"
